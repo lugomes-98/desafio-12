@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+</head>
+    <style>
+
+        body{
+            background-color: rgb(125, 165, 240);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin:0;
+            padding:0;
+        }
+
+        nav ul{
+            display: flex;
+            margin-left:65%;
+            margin-top: 0;  
+            padding: 1em;
+            align-items: center;
+            text-align: center;
+            align-content: space-evenly;
+        }
+
+
+        nav li {
+        margin-left: 2rem;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: .2rem;
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    a{
+        color: rgb(10, 3, 3);
+        border-radius: 5px;
+        text-decoration: none;
+        border: 2em;
+        display: inline-block;
+        background-color: rgb(226, 240, 35);
+        padding: .75em;
+        margin-top: 1em;
+        align-items: start;
+    }
+
+    a:hover{
+        background-color: chocolate;
+        color: rgb(49, 3, 3);
+    }
+
+    header{
+        background-color: #130688;
+        color: white;
+    }
+        h1 {
+        text-align: center;    
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+
+    .imagem-logo{
+    max-width:8em;
+    max-height:6em;
+    width: auto;
+    height: 5.5em;
+    margin: border;
+    float: left;
+    }
+
+    main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
+    } 
+
+    footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 0.75em;
+    background-color: #130688;
+    color: #f5f3fa;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin: 0;
+    } 
+
+    #res{
+        text-align: center;
+        padding-bottom: 50%;
+        color:black;
+        font-size: 1.5em;
+        margin-top: 1.5rem;
+    }
+
+    .text{
+            font-size: 1.5rem;
+            text-align: center;
+            height: 4rem;
+            width: 6rem;
+            justify-items: auto;
+            border-radius: 5px;
+            align-items: center;
+            text-decoration:dashed;
+            }
+
+    #txtn1{
+        margin-left: 15%;
+        }       
+
+
+        .botao{
+        padding: 2.5em;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+        background-color: hwb(246 16% 25%);
+        color: white;
+        height: 3em;
+        width: 4em;
+        text-align: justify;
+        font-size: 1em;
+        }
+
+        #btnLimpar{
+        padding: 2.5em;
+        padding-right: 1em;
+        margin-right: .5em;
+        margin-top: 1.5rem;
+        margin-left: 33%;
+        border-radius: 5px;
+        background-color: hwb(246 16% 25%);
+        color: white;
+        height: 3em;
+        width: 7em;
+        font-size: 1em;
+        text-transform: uppercase;  
+        }
+
+    </style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="think_2436635.png" alt="" class="imagem-logo">
+        </div>
+        <nav class="fonte">
+            <ul>
+                <li><a href="" target="_blank"><strong>Menu 01</strong></a></li>
+                <li><a href="" target="_blank"><strong>Menu 02</strong></a></li>
+                <li><a href="" target="_blank"><strong>Menu 03</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+    <h1>CALCULADORA</h1>
+        <div id="div01" class="content"> 
+            <input type="number" name="txtn1" id="txtn1" class="text"> 
+            <input type="number" name="txtn2" id="txtn2" class="text">
+            <br>
+            <input type="button" value="+" mouseout="somar()" onclick="somar()" class="botao">
+            <input type="button" value="-" mouseout="subtrair()" onclick="subtrair()" class="botao">
+            <input type="button" value="*" mouseout="multiplicar()" onclick="multiplicar()" class="botao">
+            <input type="button" value="/" mouseout="dividir()" onclick="dividir()" class="botao">
+            <br>
+            <input type="button" value="Limpar" mouseout="limpar()" id="btnLimpar" class="botao">
+    <div id="res">Resultado</div>
+    </main>
+
+
+    <footer>►Elas na Tech 2023 - Luciana Gomes Pereira◄</footer>
+
+    <script>
+            
+        function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML= `A soma é igual a <strong>${s}<strong/>`
+        }
+
+        function subtrair(){
+            var tn3 = document.getElementById('txtn1')
+            var tn4 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n3 = Number(tn3.value)
+            var n4 = Number(tn4.value)
+            var sub = n3 - n4
+            res.innerHTML = `A subtração é igual a <strong>${sub}<strong/>`
+        }
+
+        function multiplicar(){
+            var tn5 = document.getElementById('txtn1')
+            var tn6 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n5 = Number(tn5.value)
+            var n6 = Number(tn6.value)
+            var mul = n5 * n6
+            res.innerHTML = `A multiplicação é igual a <strong>${mul}<strong/>`
+        }
+
+        function dividir(){
+            var tn7 = document.getElementById('txtn1')
+            var tn8 = document.getElementById('txtn2')
+            var res = document.getElementById('res')
+            var n7 = Number(tn7.value)
+            var n8 = Number(tn8.value)
+            var divisao = n7 / n8
+            res.innerHTML = `A divisão é igual a <strong>${divisao}<strong/>` 
+        }
+
+        var btnLimpar = document.getElementById('btnLimpar');
+        btnLimpar.addEventListener('click', limpar);
+
+        function limpar() {
+            var tn9 = document.getElementById('txtn1');
+            var tn10 = document.getElementById('txtn2');
+            var result = document.getElementById('res');
+            
+            var result = document.getElementById('res');
+            tn9.value = '';
+            tn10.value = '';
+            result.innerText = ' '
+        }
+
+        var d1 = document.getElementsByClassName('botao')[0]
+        var d2 = document.getElementsByClassName('botao')[1]
+        var d3 = document.getElementsByClassName('botao')[2]
+        var d4 = document.getElementsByClassName('botao')[3]
+        var d5 = document.getElementsByClassName('botao')[4]
+
+        d1.addEventListener('click', clicar)
+        d2.addEventListener('click', clicar)
+        d3.addEventListener('click', clicar)
+        d4.addEventListener('click', clicar)
+        d5.addEventListener('click', clicar)
+
+        d1.addEventListener('mouseout', sair)
+        d2.addEventListener('mouseout', sair)
+        d3.addEventListener('mouseout', sair)
+        d4.addEventListener('mouseout', sair)
+        d5.addEventListener('mouseout', sair)
+
+        d1.addEventListener('mouseenter', entrar)
+        d2.addEventListener('mouseenter', entrar)
+        d3.addEventListener('mouseenter', entrar)
+        d4.addEventListener('mouseenter', entrar)
+        d5.addEventListener('mouseenter', entrar)
+
+
+        function clicar(){
+            d1.style.backgroundColor = 'black'
+            d2.style.backgroundColor = 'black'
+            d3.style.backgroundColor = 'black'
+            d4.style.backgroundColor = 'black'
+            d5.style.backgroundColor = 'black'
+        }
+
+        function sair(){
+        d1.style.backgroundColor = 'hwb(246 16% 25%)'
+        d2.style.backgroundColor = 'hwb(246 16% 25%)'
+        d3.style.backgroundColor = 'hwb(246 16% 25%)'
+        d4.style.backgroundColor = 'hwb(246 16% 25%)'
+        d5.style.backgroundColor = 'hwb(246 16% 25%)'
+        }
+    
+        function entrar(){
+        d1.style.backgroundColor = '#130688'
+        d2.style.backgroundColor = '#130688'
+        d3.style.backgroundColor = '#130688'
+        d4.style.backgroundColor = '#130688'
+        d5.style.backgroundColor = '#130688'
+        }
+
+
+
+
+    </script>
+</body>
+</html>
